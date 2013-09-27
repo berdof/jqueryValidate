@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="validate.js" type="text/javascript"></script>
+    <style type="text/css">
+        .error {
+            border: 1px solid red;
+            background: red;
+            color: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".validate-form [type=submit]").on("click", function (e) {
+                var isValid = validate( $(this).closest(".validate-form"));
+                return isValid;
+            })
+        })
+
+    </script>
+</head>
+<body>
+<form class="validate-form" action="#">
+    <input data-validate="empty" type="text" placeholder="First Name"/><br> <br>
+    <input data-validate="empty" type="text" placeholder="Last Name"/> <br> <br>
+    <input data-validate="email" type="email" placeholder="Email"/> <br> <br>
+    <!--<input data-validate="tel" type="tel" placeholder="Phone"/> <br> <br>-->
+    <input type="submit"/>
+</form>
+</body>
+</html>
+
